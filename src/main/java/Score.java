@@ -1,17 +1,27 @@
 public class Score {
 
     private int score;
+    private String player;
 
-    public Score(int score) {
+    public Score(int score, String player) {
         this.score = score;
+        this.player = player;
     }
 
     public void setScore(int score) {
         this.score = score;
     }
 
+    public void setPlayer(String player) {
+        this.player = player;
+    }
+
     public int getScore() {
         return score;
+    }
+
+    public String getPlayer() {
+        return player;
     }
 
     public int compareTo(Score s) {
