@@ -29,7 +29,7 @@ public class SingleLinkedList {
                 newNode.next = current.next; // Set the new node's next value to the current node's next value
                 current.next = newNode; // Set the current node's next value to the new node (basically just insert the new node and point it to the next node and the new previous node to it)
                 if (countNodes(list) > 10) {
-                    // remove node
+                    removeLastNode();
                 }
             }
         }
@@ -57,6 +57,16 @@ public class SingleLinkedList {
         }
         if (current != null) previous.next = current.next;
 
+    }
+
+    public void removeLastNode() {
+        Node current = list;
+        Node previous = list;
+        while (current.next != null) {
+            previous = current;
+            current = current.next;
+        }
+        previous.next = null;
     }
     public void addFront(Score s){
         Node frontNode = new Node(s);
