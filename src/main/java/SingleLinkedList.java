@@ -11,10 +11,12 @@ public class SingleLinkedList {
         Node current = list; // Create a node, set it equal to the current linked list
         if (list == null){ // If the current linked list is empty...
             list = newNode; // Set the current linked list to the new node (list now has 1 element)
-        }else if (newNode.data.getScore() >= current.data.getScore()){ // Or if the new node's score value is greater than the current linked list's first node's score value...
+        }
+        else if (newNode.data.getScore() >= current.data.getScore()){ // Or if the new node's score value is greater than the current linked list's first node's score value...
             list = newNode; // Set the current linked list to the new node (new node is now the only item in the list)
             newNode.next = current; // Set the new node's (new node is the whole list at this point) next value to the now *old* linked list's first node
-        }else{ // Or if the new node is less than the current linked list's first node...
+        }
+        else { // Or if the new node is less than the current linked list's first node...
             while (current.next != null && newNode.data.getScore() <= current.next.data.getScore()){ // While there are still more nodes in the list and the new node's score is less than the currently being evaulated node...
                 current = current.next; // Set the current node to the next node in the list (move onto the next node)
             }
@@ -30,6 +32,19 @@ public class SingleLinkedList {
                     // remove node
                 }
             }
+        }
+    }
+
+    private Node findNode(Score s) {
+        Node current = list;
+        if (list == null) {
+            return list;
+        }
+        else {
+            while (current.data.getScore() != s.getScore()) {
+                current = current.next;
+            }
+            return current;
         }
     }
 
