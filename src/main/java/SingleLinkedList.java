@@ -48,6 +48,16 @@ public class SingleLinkedList {
         }
     }
 
+    public void removeNode(Node n) {
+        Node current = list;
+        Node previous = list;
+        while (n != current) {
+            previous = current;
+            current = current.next;
+        }
+        if (current != null) previous.next = current.next;
+
+    }
     public void addFront(Score s){
         Node frontNode = new Node(s);
         frontNode.next = list;
