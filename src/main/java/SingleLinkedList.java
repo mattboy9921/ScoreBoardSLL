@@ -26,7 +26,6 @@ public class SingleLinkedList {
             if (current.next == null) {
                 if (countNodes(list) < 10) {
                     current.next = newNode;
-                    System.out.println("List less than 10.");
                 }
             }
             else {
