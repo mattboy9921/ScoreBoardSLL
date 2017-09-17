@@ -39,30 +39,6 @@ public class SingleLinkedList {
         }
     }
 
-    private Node findNode(Score s) {
-        Node current = list;
-        if (list == null) {
-            return list;
-        }
-        else {
-            while (current.data.getScore() != s.getScore()) {
-                current = current.next;
-            }
-            return current;
-        }
-    }
-
-    public void removeNode(Node n) {
-        Node current = list;
-        Node previous = list;
-        while (n != current) {
-            previous = current;
-            current = current.next;
-        }
-        if (current != null) previous.next = current.next;
-
-    }
-
     public void removeLastNode() {
         Node current = list;
         Node previous = list;
@@ -71,37 +47,6 @@ public class SingleLinkedList {
             current = current.next;
         }
         previous.next = null;
-    }
-    public void addFront(Score s){
-        Node frontNode = new Node(s);
-        frontNode.next = list;
-        list = frontNode;
-    }
-
-    public void addTail(Score s) {
-        Node tailNode = new Node(s);
-        Node current = list;
-        if (list == null){
-            list = tailNode;
-        }else{
-            while (current.next != null){
-                current = current.next;
-            }
-            current.next = tailNode;
-        }
-    }
-
-
-    public Score topScore(){
-        Node current = list.next;
-        Score bestStudent = list.data;
-        while (current != null){
-            if (current.data.getScore() > bestStudent.getScore()){
-                bestStudent = current.data;
-            }
-            current = current.next;
-        }
-        return bestStudent;
     }
 
     public void printLinkedList(){
@@ -120,25 +65,6 @@ public class SingleLinkedList {
         }else{
             return countNodes(list.next) + 1;
         }
-    }
-
-    public Score worstStudentRec(Node list){
-        if (list.next == null){
-            return list.data;
-        }else{
-            Score s = worstStudentRec(list.next);
-            if (s.getScore() < list.data.getScore()){
-                return s;
-            }else{
-                return list.data;
-            }
-        }
-    }
-
-
-
-    public Node getList(){
-        return list;
     }
 
     private class Node{
