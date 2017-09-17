@@ -1,6 +1,6 @@
 import java.util.Random;
 
-public class ScoreBoardSSL {
+public class ScoreBoardSLL {
 
     public static void main (String[] args) {
 
