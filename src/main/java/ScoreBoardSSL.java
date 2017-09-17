@@ -7,9 +7,15 @@ public class ScoreBoardSSL {
         Random random = new Random();
 
         // Create 20 scores and store them in an array
-        Score unsortedScores[] = new Score[20];
+        System.out.println("Here is a list of 20 scores:");
+        SingleLinkedList scores = new SingleLinkedList();
         for (int count = 0; count < 20; count++) {
-            unsortedScores[count] = new Score(random.nextInt(100) + 1);
+            int score = random.nextInt(100) + 1;
+            System.out.println("Score " + (count + 1) + ": " + score);
+            scores.addNode(new Score(score));
         }
+
+        System.out.println("\nThe top 10 scores are:");
+        scores.printLinkedList();
     }
 }
