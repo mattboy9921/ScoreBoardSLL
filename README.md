@@ -40,3 +40,5 @@ The top 10 scores are:
 10: 82
 
 Process finished with exit code 0
+
+(Not sure why formatting is putting each score on the same line, check raw output for actual formatting.)
